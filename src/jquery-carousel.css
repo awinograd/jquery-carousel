@@ -1,0 +1,58 @@
+.j-carousel-outer {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+.j-carousel-outer .j-carousel-inner {
+  width: 100000px;
+  position: relative;
+}
+.j-carousel-outer .arrow {
+  background: #000000;
+  opacity: .4;
+  width: 50px;
+  position: relative;
+  z-index: 100;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.j-carousel-outer .arrow-right {
+  float: right;
+  -webkit-border-radius: 0px 10px 10px 0px;
+  -moz-border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px;
+}
+.j-carousel-outer .arrow-right .arrow-inner {
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid white;
+  height: 0;
+  width: 0;
+  position: relative;
+  top: 37%;
+  left: 10px;
+}
+.j-carousel-outer .arrow-left {
+  float: left;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
+}
+.j-carousel-outer .arrow-left .arrow-inner {
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right: 30px solid white;
+  height: 0;
+  width: 0;
+  position: relative;
+  top: 37%;
+  left: 10px;
+}
+.j-carousel-outer .arrow:hover {
+  opacity: .7;
+}
