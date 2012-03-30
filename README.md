@@ -4,9 +4,9 @@ The carousel is implemented using solely jQuery and CSS. There are no images. Th
 
 All you have to do in order to use it is link to the js and css files as you normally would and call:
 
-' javascript
+```
   $(element_containing_carousel_members).Carousel();
-'
+```
 
 Necessary CSS styles:
-'children must float: left;'
+children must float: left;
