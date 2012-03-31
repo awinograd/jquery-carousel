@@ -2,6 +2,8 @@ Hey! This project is a carousel jQuery plugin. However, rather than a "featured-
 
 The carousel is implemented using solely jQuery and CSS. There are no images. The provided CSS can serve as a finished product or a boilerplate for customization. There are some styles that are required to not look broken, but many are just there for extra aesthetics.
 
+The CSS was originally written using LESS. Both the .less and .css files are in the src/ directory.
+
 All you have to do in order to use it is link to the js and css files as you normally would and call:
 
 ```
