@@ -22,4 +22,6 @@ $(element_containing_carousel_members).Carousel({
   });
 ```
 
+**Note:** The carousel memebers must have explicit height and witdth in order for the carousel to work.
+
 I hope you enjoy using my plugin! Shoot me a message if you're using/enjoying it. And feel free to fork / suggest changes!
