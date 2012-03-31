@@ -42,6 +42,7 @@
       var inner = outer.find(".j-carousel-inner");
       var carousel = inner.data('j-carousel');
       var options = carousel.options;
+      var duration = options.duration;
       //index of current item at the front of the visible carousel
       var currPos = carousel.currElem;
       //total number of items in the carousel
@@ -69,7 +70,7 @@
 
           $(inner).animate({
             left: '+='+shiftWidth,
-          }, 150);
+          }, duration);
 
           //update currElem
           carousel.currElem = shiftDir > 0 ? -maxElemPos : 0;
@@ -82,10 +83,10 @@
         if (options.bounce){
           $(inner).animate({
             left: '+='+(50*shiftDir),
-          }, 150, function() {
+          }, duration, function() {
             $(inner).animate({
               left: '-='+(50*shiftDir),
-            }, 150);
+            }, duration);
           });
         }
 
@@ -121,6 +122,7 @@
     } else if ( typeof method === 'object' || ! method ) {
 
       var defaults = {
+        duration: 150,
         direction: 1,
         outerClass: '',
         bounce: true,
