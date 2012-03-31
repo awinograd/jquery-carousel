@@ -11,10 +11,13 @@ All you have to do in order to use it is link to the js and css files as you nor
 There are some options that you can use to change some behaviors.
 
 ```
-  direction: 1/-1    // defaults to 1. -1 will change the directions which the arrows scroll the carousel
-  outerClass: string // defaults to ''. Adds a class to the outer element that wraps around the element on which Carousel() is called
-  bounce: true/false // defaults to true. en/disables the bouncy effect if user tries to scroll past an end
-  wrap: true/false   // defaults to false. en/disables wrap behavior (scrolling past one end jumps to the other, overrides 'bounce')
+$(element_containing_carousel_members).Carousel({
+  duration: integer   // defaults to 150. Duration of the scrolling animation in milliseconds
+  direction: 1/-1,    // defaults to 1. -1 will change the directions which the arrows scroll the carousel
+  outerClass: string, // defaults to ''. Adds a class to the outer element that wraps around the element on which Carousel() is called
+  bounce: true/false, // defaults to true. en/disables the bouncy effect if user tries to scroll past an end
+  wrap: true/false    // defaults to false. en/disables wrap behavior (scrolling past one end jumps to the other, overrides 'bounce')
+  });
 ```
 
 I hope you enjoy using my plugin! Shoot me a message if you're using/enjoying it. And feel free to fork / suggest changes!
