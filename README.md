@@ -8,5 +8,12 @@ All you have to do in order to use it is link to the js and css files as you nor
   $(element_containing_carousel_members).Carousel();
 ```
 
-Necessary CSS styles:
-children must float: left;
+There are some options that you can use to change some behaviors.
+
+```
+  bounce: true/false // en/disables the bouncy effect if user tries to scroll past an end
+  wrap: true/false   // en/disables wrap behavior (scrolling past one end jumps to the other, overrides 'bounce')
+```
+
+I hope you enjoy using my plugin! Shoot me a message if you're using/enjoying it. And feel free to fork / suggest changes!
+awinograd
