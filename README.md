@@ -21,4 +21,3 @@ $(element_containing_carousel_members).Carousel({
 ```
 
 I hope you enjoy using my plugin! Shoot me a message if you're using/enjoying it. And feel free to fork / suggest changes!
-awinograd
