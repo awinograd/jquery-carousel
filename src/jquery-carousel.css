@@ -10,6 +10,9 @@
   width: 100000px;
   position: relative;
 }
+.j-carousel-outer .j-carousel-inner > * {
+  float: left;
+}
 .j-carousel-outer .arrow {
   background: #000000;
   opacity: .4;
@@ -21,6 +24,9 @@
   -o-user-select: none;
   user-select: none;
 }
+.j-carousel-outer .arrow:hover {
+  opacity: .7;
+}
 .j-carousel-outer .arrow-right {
   float: right;
   -webkit-border-radius: 0px 10px 10px 0px;
@@ -30,11 +36,12 @@
 .j-carousel-outer .arrow-right .arrow-inner {
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 30px solid white;
+  border-left: 30px solid #ffffff;
   height: 0;
   width: 0;
   position: relative;
-  top: 37%;
+  top: 50%;
+  margin-top: -30px;
   left: 10px;
 }
 .j-carousel-outer .arrow-left {
@@ -46,13 +53,11 @@
 .j-carousel-outer .arrow-left .arrow-inner {
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-right: 30px solid white;
+  border-right: 30px solid #ffffff;
   height: 0;
   width: 0;
   position: relative;
-  top: 37%;
+  top: 50%;
+  margin-top: -30px;
   left: 10px;
-}
-.j-carousel-outer .arrow:hover {
-  opacity: .7;
 }

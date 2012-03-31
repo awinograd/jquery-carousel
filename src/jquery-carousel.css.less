@@ -1,0 +1,94 @@
+//
+// Mixins
+//
+
+// Border Radius
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// User select
+// For selecting text on the page
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+
+//
+// Carousel
+//
+
+.j-carousel-outer {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.3);
+  .border-radius(10px 10px 10px 10px);
+  .j-carousel-inner {
+    width: 100000px;
+    position: relative;
+    > * {
+      float: left;
+    }
+  }
+
+  //
+  // Carousel Arrows
+  //
+
+  @arrowBorder: 30px;
+  @arrowInnerColor: rgb(255,255,255);
+  @arrowOuterColor: rgb(0,0,0);
+
+  .arrow {
+    background: @arrowOuterColor;
+    opacity: .4;
+    width: 50px;
+    position: relative;
+    z-index: 100;
+    .user-select(none);
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .arrow-inner-shared(){
+    //setup for a CSS arrow
+    height: 0;
+    width: 0;
+
+    //positioning of the inner arrow
+    position: relative;
+    top: 50%;
+    margin-top: -@arrowBorder;
+    left: 10px;
+  }
+
+  .arrow-right {
+    float: right;
+    .border-radius(0px 10px 10px 0px);
+
+    .arrow-inner {
+      border-top: @arrowBorder solid transparent;
+      border-bottom: @arrowBorder solid transparent;
+      border-left: @arrowBorder solid @arrowInnerColor;
+      .arrow-inner-shared();
+    }
+  }
+
+  .arrow-left {
+    float: left;
+    .border-radius(10px 0px 0px 10px);
+
+    .arrow-inner {
+      border-top: @arrowBorder solid transparent;
+      border-bottom: @arrowBorder solid transparent;
+      border-right: @arrowBorder solid @arrowInnerColor;
+      .arrow-inner-shared();
+    }
+  }
+}
