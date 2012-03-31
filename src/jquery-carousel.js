@@ -24,7 +24,7 @@
         numElems: numElems,
         currElem: 0,
         elemWidth: elemWidth,
-        direction: options.direction
+        options: options
       };
 
       this.data("j-carousel", carousel);
@@ -41,13 +41,14 @@
       //carousel associated with the arrow
       var inner = outer.find(".j-carousel-inner");
       var carousel = inner.data('j-carousel');
+      var options = carousel.options;
       //index of current item at the front of the visible carousel
       var currPos = carousel.currElem;
       //total number of items in the carousel
       var numElems = carousel.numElems;
 
       //take into account the setting of reversing the direction that the arrows move the carousel
-      shiftDir = shiftDir*carousel.direction;
+      shiftDir = shiftDir*options.direction;
 
       //calculate width of carousel that is not covered by arrows
       var displayWidth = outer.width(); //- arrow widths?
@@ -60,15 +61,34 @@
       var maxElemPos = numElems - shiftNum + 1; 
 
       //if we're trying to advance in the direction that's already maxed out
-      //do bouncy effect + don't move
       if ((currPos >= 0 && shiftDir > 0) || (Math.abs(currPos) >= maxElemPos && shiftDir < 0 )){
-        $(inner).animate({
-          left: '+='+(50*shiftDir),
-        }, 150, function() {
+
+        //if wrap is enabled, perform wrap
+        if (options.wrap){
+          var shiftWidth = maxElemPos * elemWidth * -shiftDir;
+
           $(inner).animate({
-            left: '-='+(50*shiftDir),
+            left: '+='+shiftWidth,
           }, 150);
-        });
+
+          //update currElem
+          carousel.currElem = shiftDir > 0 ? -maxElemPos : 0;
+          $(inner).data("carousel", carousel);
+
+          return;
+        }
+
+        //if bounce is enabled, perform bounce
+        if (options.bounce){
+          $(inner).animate({
+            left: '+='+(50*shiftDir),
+          }, 150, function() {
+            $(inner).animate({
+              left: '-='+(50*shiftDir),
+            }, 150);
+          });
+        }
+
         return;
       }
 
@@ -102,7 +122,9 @@
 
       var defaults = {
         direction: 1,
-        outerClass: ''
+        outerClass: '',
+        bounce: true,
+        wrap: false
       };
 
       // extend defaults with args passed by client (method)
