@@ -76,6 +76,7 @@
           carousel.currElem = shiftDir > 0 ? -maxElemPos : 0;
           $(inner).data("carousel", carousel);
 
+          options.bounceWrapCallback.call(this, outer, shiftDir, currPos);
           return;
         }
 
@@ -88,9 +89,10 @@
               left: '-='+(50*shiftDir),
             }, duration);
           });
-        }
 
-        return;
+          options.bounceWrapCallback.call(this, outer, shiftDir, currPos);
+          return;
+        }
       }
 
       //max number of elements we are willing to shift
@@ -111,6 +113,8 @@
       }, 250, function() {
         // Animation complete.
       });
+      
+      options.arrowClickCallback.call(this, outer, shiftDir, currPos, endPos);
     }
   };
 
@@ -126,7 +130,9 @@
         direction: 1,
         outerClass: '',
         bounce: true,
-        wrap: false
+        wrap: false,
+        arrowClickCallback: function(outer, shiftDir, currPos, endPos){},
+        bounceWrapCallback: function(outer, shiftDir, currPos){},
       };
 
       // extend defaults with args passed by client (method)
